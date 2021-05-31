@@ -3,20 +3,97 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="script.js"></script>
 	<script src="https://kit.fontawesome.com/fccb76fc09.js" crossorigin="anonymous"></script>
-	<link type="text/css" rel="stylesheet" href="style.css">
+	<link type="text/css" rel="stylesheet" href="page2.css">
 	<title>Orinoco</title>
 </head>
 <body>
 	<header>
 		<div id="logo">
-			<a href="index.html">
-				<img src="images/logo.png" alt="logo Orinoco">
+			<a href="page1.html">
+				<i class="fas fa-arrow-left"></i>
+				<img src="images/logo.PNG" alt="logo Orinoco">
 			</a>
-			<!--<i class="fas fa-shopping-basket"></i>-->
+			<div class="icon">
+				<i class="far fa-user"></i>
+				<i class="fas fa-heart"></i>
+				<i class="fas fa-shopping-basket"></i>
+			</div>
 		</div>
 	</header>
-<footer>
+	<div class="search">
+		<input type="search" id="site-search" name="search" placeholder="Rechercher">
+		<button><i class="fas fa-search"></i></button>
+	</div>
+	<section>
+		<div class="panier">
+			<h1>Mon panier (1 article)<!--mettre du JS--></h1>
+			<div class="image">
+				<img src="images/vcam_1.jpg" alt="Camera 1" />
+				<div class="description">
+					<h2>Zurss 50S</h2>
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe asperiores similique...</p>
+					<label for="tentacles">Quantité:</label>
+					<input type="number" id="number" name="tentacles"
+       min="1" max="100">
+					<div class="prix">
+						<p>49.900€ TTC<span> TVA incluse</span></p>
+					</div>
+				</div>	
+			</div>
+			<div class="reserve">
+				<p><i class="fas fa-exclamation-circle"></i>Les articles dans le panier ne sont pas réservés.</p>
+			</div>
+		</div>
+		<div class="livraison">
+			<h2>Livraison estimée</h2>
+			<p>Je,03.06.-Lu,07.06.</p>
+		</div>
+		<div class="total">
+			<p>Total (TVA incluse)</p>
+			<p>49.900€</p>
+		</div>
+		<div class="paiement">
+			<h2>Nous acceptons</h2>
+			<i class="fab fa-cc-visa"></i><i class="fab fa-cc-paypal"></i><i class="fab fa-bitcoin"></i><i class="fab fa-cc-amex"></i>
+		</div>
+		<h2>Formulaire de commande</h2>
+		<form action="#">
+  			<p><i>Complétez le formulaire. Les champs marqué par </i><em>*</em> sont <em>obligatoires</em></p>
+  			<fieldset>
+   				<legend>Contact</legend>
+			    <label for="nom">Nom, Prénom <em>*</em></label>
+			    <input id="nom" placeholder="Olivier Serre" autofocus="" required=""><br>
+			    <label for="telephone">Portable</label>
+			    <input id="telephone" type="tel" placeholder="06xxxxxxxx" pattern="06[0-9]{8}"><br>
+			    <label for="email">Email <em>*</em></label>
+			    <input id="email" type="email" placeholder="prenom.nom@gmail.com" required="" pattern="[a-zA-Z]*.[a-zA-Z]*@polytechnique.edu"><br>
+  			</fieldset>
+  			<fieldset>
+			    <legend>Information de livraison</legend>
+			    <label for="adresse">Adresse<em>*</em></label>
+			    <input id="adresse" placeholder="rue de Paris" type="textarea"><br>
+			    <label for="code postal">Code Postal<em>*</em></label>
+			    <input id="code postal" type="number" placeholder="45000" required=""><br>
+			    <label for="ville">Ville<em>*</em></label>
+			   	<input id="ville" placeholder="Paris" type="textarea"><br>
+  			</fieldset>
+  			<fieldset>
+			    <legend>Choisissez vos produits</legend>
+			    <label for="Zurss 50S"><input id="Zurss 50S" type="checkbox" name="binet"> Zurss 50S</label>
+			    <label for="oenologie"><input id="oenologie" type="checkbox" name="binet" value="vin"> Œnologie</label>
+			    <label for="bobar"><input id="bobar" type="checkbox" name="binet" value="bob"> Bôbar</label>
+			    <label for="Xpara"><input id="Xpara" type="checkbox" name="binet" value="para"> X-Para</label>
+			    <label for="khomiss"><input id="khomiss" type="checkbox" name="binet" value="???"> Khômiss</label>
+  			</fieldset>
+  			<p><input type="submit" value="Commander"></p>
+		</form>
+		<!--<div class="commander">
+			<a href="page3.html"><button>Commander</button></a>
+		</div>-->
+	</section>
+	<footer>
 		<div class="footer">
 			<p>Orinoco</p>
 			<ul>
@@ -24,6 +101,7 @@
 				<li><a href="#">CGV</a></li>
 				<li><a href="#">Mentions légales</a></li>
 				<li><a href="mailto:noreply@orinoco.com">Contact</a>
+				</li>
 			</ul>
 		</div>
 	</footer>

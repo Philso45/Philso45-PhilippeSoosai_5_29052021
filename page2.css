@@ -25,6 +25,13 @@
 		margin-top: 4px;
   		margin-left: 5px;
 	}
+	#logo .fa-arrow-left {
+		font-size: 1.3em;
+	    position: relative;
+	    bottom: 10px;
+	    left: 10px;
+	    margin-right: 25px;
+	}
 	.icon {
 		margin-top: 15px;
 	  	margin-right: 10px;
@@ -38,7 +45,7 @@
 	}
 /*FIN DU HEADER */
 /*BARRE DE RECHERCHE*/
-input {
+.search input {
     margin: .4rem 0;
     padding: 10px;
     width: 88%;
@@ -54,61 +61,165 @@ input {
   border-color:#f3e9f1; 
   box-shadow: 0px 4px 5px #bfbfbf;
 }
+
 /*SECTION*/
-#product_image img {
-	height: 350px;
+.panier {
+	height: 300px;
 	width: 100%;
+	margin-top: 20px;
+	box-shadow: 0px 4px 5px #bfbfbf;
+}
+h1 {
+    font-size: 1.4em;
+    margin: 0 0 25px 5px;
+}
+h2 {
+	font-size: 1em;
+	margin-bottom:5px;
+}
+.image img {
+	width: 32%;
+	height: 138px;
 	object-fit: cover;
+	margin: 0 0 5px 5px;
 }
-.titre_produit h1,p {
-	margin-left:10px;
+.image {
+	display: flex;
+}
+.description input {
+    margin: .4rem 0;
+}
+.description {
+	margin-left: 10px;
+}
+.prix span {
+	font-size: 0.7em;
+}
+.prix p {
 	margin-top: 0;
-	margin-bottom: 13px;
+	width: 100%;
 }
-.titre_produit h1 {
-	font-size: 1.2em;
-	margin-bottom: 7px;
+.description p {
+	margin-top: 0;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
-.titre_produit p {
-	font-size: 1.2em;
-}
-.titre_produit span {
+.reserve p {
+	margin-left: 10px;
 	font-size: 0.8em;
 }
-.etoile {
-	font-size: 1.2em;
-	margin-left:10px;
-	margin-top: 0;
-	margin-bottom: 13px;
-
+.reserve .fas {
+	margin-right: 10px;
+}
+.livraison {
+	
+	border-top: 1px solid #bfbfbf;
+	padding: 5px 0 5px 0;
+}
+.livraison h2,p{
+	margin-top: 5px;
+	margin-left: 5px;
+}
+.total {
+	border-top: 1px solid #bfbfbf;
+	border-bottom: 1px solid #bfbfbf;
+	padding: 5px 0 5px 0;
+	display: flex;
+	justify-content: space-between;
+}
+.paiement {
+	margin-top: 5px;
+	border-bottom: 1px solid #bfbfbf;
+	padding: 5px 0 5px 0;
+}
+.paiement h2 {
+	margin-top: 5px;
+	margin-left: 5px;
+}
+.paiement .fab {
+	font-size: 2em;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.commander button {
+	  width: 100%;
+    margin: auto;
+    background-color: #2c3869;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    margin-top: 10px;
+    padding: 15px 15px 15px 15px;
+    box-shadow: 0px 4px 5px #bfbfbf;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
 }
 
-.caracteristiques {
-	border:2px solid #f3e9f1;
-	height: 560px;
+/*Formulaire */
+form p {
+  margin-top: 0px;
+}
+ 
+fieldset {
+  margin-bottom: 15px;
+  padding: 10px;
+}
+ 
+legend {
+  padding: 0px 3px;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+ 
+form label {
+  width: 110px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 6px;
+}
+ 
+em {
+  font-weight: bold;
+  font-style: normal;
+  color: #f00;
+}
+ 
+form input:focus {
+  background: #eaeaea;
+}
+ 
+/*form input, textarea {
+  width: 249px;
+}*/
+ 
+textarea {
+  height: 100px;
+}
+ 
+select {
+  width: 254px;
+}
+ 
+form input[type=checkbox] {
+  width: 10px;
+}
+ 
+form input[type=submit] {
 	width: 100%;
-	margin-bottom: 10px;
-	border-radius: 10px;
-	box-shadow: 1px 0px 10px #bfbfbf;
+    margin: auto;
+    background-color: #2c3869;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    margin-top: 10px;
+    padding: 15px 15px 15px 15px;
+    box-shadow: 0px 4px 5px #bfbfbf;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
 }
-.caracteristiques h4,h3 {
-	margin: 0 0 5px 5px; 
-}
-.caracteristiques h4 {
-	font-size: 1.1em;
-}
-.caracteristiques h3 {
-	margin-bottom: 10px;
-}
-
-.caracteristiques p {
-	border-bottom: 3px solid #f3e9f1;
-    width: 95%;
-    padding-bottom: 15px;
-}
-
-
 /*footer*/
 
   .footer {
@@ -140,4 +251,33 @@ input {
   footer .fas {
     margin-right: 10px;
   }
+}
+
+@media screen and (min-width: 414px) and (max-width: 767px) {
+	.search input {
+		width: 89%;
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 980px) {
+	.search input {
+		width: 94%;
+	}
+}
+@media screen and (min-width: 978px) {
+	.search input {
+		width: 96%;
+	}
+	section {
+		width: 80%;
+    	margin: auto;
+	}
+	.image img {
+		height: 230px;
+	}
+	.panier {
+		height: 330px;
+	}
+	.reserve p {
+	 	margin-top: 16px;
+	}
 }

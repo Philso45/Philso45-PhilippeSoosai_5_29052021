@@ -1,3 +1,5 @@
-document.addEventListener('load',function() {
-        document.getElementsByClassName("button").innerHTML = "Hello World";
-    });
+const btn = document.getElementsByClassName('camera');
+
+btn.addEventListener('click',function(e) {
+	console.log('e');
+})
