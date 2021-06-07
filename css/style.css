@@ -1,0 +1,685 @@
+body {
+  margin: auto;
+}
+
+header {
+  font-family: "Arial", sans-serif;
+  font-size: 1.3em;
+  background-color: #f3e9f1;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.nav {
+  margin-top: 15px;
+  margin-right: 10px;
+}
+
+.nav a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #000000;
+  font-size: 0.8em;
+}
+header a img {
+  max-width: max-content;
+  display: inline-block;
+  margin: auto;
+}
+
+header .lien_panier {
+  text-decoration: none;
+  color: #454545;
+  font-family: "Arial", sans-serif;
+  margin: auto 20px auto 5px;
+  text-align: right;
+}
+
+header .lien_panier:hover {
+  opacity: 1;
+  transform: scale(1);
+}
+input {
+    margin: .4rem 0;
+    padding: 10px;
+    width: 88%;
+    border-radius: 10px;
+    font-family:  'Fira Sans', sans-serif;
+    border-color:#f3e9f1; 
+    box-shadow: 0px 4px 5px #bfbfbf;
+}
+#pageproduit h1 {
+    font-family: "Arial", sans-serif;
+    font-size: 2em;
+    color: #000000;
+    text-align: center;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.search {
+  text-align: center;
+}
+.search button {
+  padding: 10px;
+  border-radius: 10px;
+  font-family:  'Fira Sans', sans-serif;
+  border-color:#f3e9f1; 
+  box-shadow: 0px 4px 5px #bfbfbf;
+}
+.home {
+  text-align: center;
+  background:linear-gradient(#f3e9f1, white);
+  margin-bottom: 20px;
+  margin-top: 10px;
+  box-shadow: 0px 4px 5px #bfbfbf;
+  height: 150px;
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+}
+h1 {
+  color: black;
+  padding-top: 17px;
+  margin-top: 4px;
+  text-align: center;
+}
+h2 {
+  font-size: 1.2em;
+  margin-top: 11px;
+  text-align: center;
+}
+.button {
+    width: 26%;
+    margin: auto;
+    background-color: #2c3869;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    padding: 15px 15px 15px 15px;
+    box-shadow: 0px 4px 5px #bfbfbf;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+.button1 {
+    background-color: #2c3869;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    padding: 15px 15px 15px 15px;
+    box-shadow: 0px 4px 5px #bfbfbf;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+  }
+section a {
+  width: 85%;
+  height: 540px;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  box-shadow: 0 0 20px #bfbfbf;
+  margin: 30px auto 30px auto;
+  background-color: #ffff;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius:30px;
+  border: none;
+}
+
+section a img {
+  height: 290px;
+  border-radius: 30px 30px 0 0;
+  box-shadow: 0px 4px 5px #bfbfbf;
+  object-fit: cover;
+}
+
+section a .cameras_Info {
+  margin: auto;
+}
+
+section a .cameras_Info h3 {
+  color: #000000;
+  padding-left: 10px;
+  padding-right: 20px;
+  font-size: 2em;
+}
+
+section a .cameras_Info p {
+  color: #000000;
+  font-style: italic;
+  font-size: 1em;
+}
+
+.footer {
+    background-color: #303030;
+    height: 200px;
+    width: 100%;
+    color: white;
+  }
+
+  footer p {
+    font-size: 1.5em;
+    padding: 15px 0 0 15px;
+  }
+
+  footer ul {
+    list-style-type: none;
+    padding: 0 0 0 15px;
+  }
+
+  footer ul li {
+    margin-bottom: 10px;
+  }
+
+  footer a {
+    text-decoration: none;
+    color: white;
+  }
+
+  footer .fas {
+    margin-right: 10px;
+  }
+
+.camera_Info {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 20px #bababa;
+  background-color: #ffffff;
+  margin: 20px auto 10px auto;
+  height: auto;
+}
+
+.camera_Info h3 {
+  color: #000000;
+  font-family: "Arial", sans-serif;
+  text-align: center;
+}
+
+.camera_Info p {
+  color: #000000;
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  margin: 15px;
+}
+
+.camera_Info .confirm {
+  margin: 30px auto 30px auto;
+  width: 80%;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px #bababa;
+}
+
+.camera_Info .confirm h3 {
+  color: tomato;
+}
+
+.camera_Info .confirm .confirm_par {
+  font-weight: 500;
+  text-align: left;
+  margin-left: 30px;
+  color: tomato;
+}
+
+.camera_Info img {
+  width: 90%;
+  height: 50%;
+  margin: auto;
+  box-shadow: 0 0 20px #bababa;
+}
+
+.camera_Info .camera_info {
+  font-family: "Arial", sans-serif;
+  color: #454545;
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+}
+
+.camera_Info .camera_info h3 {
+  color: #000000;
+  margin-bottom: 30px;
+}
+
+.camera_Info .camera_info p {
+  padding: 5px;
+  color: #000000;
+  width: 100%;
+  margin: auto;
+}
+
+.camera_Info .camera_info .prixcamera {
+  font-weight: 500;
+  color: #000000;
+}
+
+.camera_Info .camera_cart {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.camera_Info .camera_cart h3 {
+  font-family: "Arial", sans-serif;
+  color: #000000;
+  margin: 20px auto 20px auto;
+}
+
+.camera_Info .camera_cart .each_camera {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  background-color: #f3e9f1;
+}
+
+.camera_Info .camera_cart .each_camera p {
+  font-family: "Arial", sans-serif;
+  margin-left: 15px;
+  padding: 5px;
+}
+
+.camera_Info .camera_cart .each_camera .prixcamera {
+  display: flex;
+  font-weight: 500;
+}
+
+.camera_Info .camera_cart .each_camera .prixcamera button {
+  margin: auto 20px auto auto;
+  background-color: #ffffff;
+  color: tomato;
+  border-radius: 10px;
+  font-size: 1em;
+  padding: 8px;
+  transform: scale(1);
+  transition: transform 300ms ease-in-out;
+}
+
+.camera_Info .camera_cart .each_camera .prixcamera button:hover {
+  background-color: #f3e9f1;
+  transform: scale(1.1);
+  color: #ac1d04;
+}
+
+.camera_Info .camera_cart .icon_suppression {
+  width: auto;
+  border-radius: 20px;
+  margin: 20px auto 30px auto;
+  background-color: #000000;
+  font-family: "Arial", sans-serif;
+  color: #ffffff;
+  font-size: 1em;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.camera_Info .camera_cart .icon_suppression #cart_link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.camera_Info .camera_cart .icon_suppression .fas {
+  font-size: 1.5em;
+  padding: 5px;
+}
+
+.suppr_button {
+  padding: 10px;
+}
+form {
+  margin: 10px;
+  font-weight: 500;
+}
+
+.colors_choice {
+  margin-bottom: 10px;
+}
+
+.colors_choice label {
+  color: #000000;
+}
+
+.colors_choice select {
+  padding: 5px;
+  margin: 10px;
+  border-radius: 10px;
+  width: auto;
+}
+
+#submit {
+  border-radius: 10px;
+  margin: 20px;
+  background-color: #000000;
+  font-family: "Arial", sans-serif;
+  color: #ffffff;
+  font-size: 1em;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.texte p{
+  font-size: 1.5em;
+  text-align: center;
+  font-style: italic;
+}
+
+.total {
+  font-family: "Arial", sans-serif;
+  color: #000000;
+  font-weight: 500;
+  font-size: larger;
+  margin: 20px auto 20px auto;
+}
+
+.empty_cart {
+  font-family: "Arial", sans-serif;
+  color: #000000;
+  font-weight: 500;
+  font-size: larger;
+  margin: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.contact_form {
+  border: 4px solid #f3e9f1;
+}
+
+.contact_form h3 {
+  text-align: center;
+  padding: 5px;
+  font-weight: 400;
+  color: tomato;
+}
+
+.contact_form .div_name {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: #000000;
+  font-family: "Arial", sans-serif;
+  padding: 10px;
+}
+
+.contact_form .div_name .name {
+  padding: 5px;
+  margin: 10px;
+  border-radius: 10px;
+  width: 50%;
+}
+
+.contact_form .div_name #valid {
+  width: auto;
+  border-radius: 20px;
+  margin: 20px auto 30px auto;
+  background-color: #000000;
+  font-family: "Arial", sans-serif;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1em;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.camera_confirm {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  box-shadow: 0 0 20px #bababa;
+  background-color: tomato;
+  margin: 20px auto 10px auto;
+  height: auto;
+  width: 70%;
+}
+
+.camera_confirm h3 {
+  color: #000000;
+  font-family: "Arial", sans-serif;
+  text-align: center;
+}
+
+.camera_confirm p {
+  color: #000000;
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  margin: 15px;
+}
+
+.camera_confirm .confirm {
+  margin: 30px auto 30px auto;
+  width: 80%;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px #bababa;
+}
+
+.camera_confirm .confirm h3 {
+  color: tomato;
+}
+
+.camera_confirm .confirm .confirm_par {
+  font-weight: 500;
+  text-align: left;
+  margin-left: 30px;
+  color: tomato;
+}
+.prix_camera {
+  display: flex;
+}
+@media only screen and (max-width: 360px) {
+  header a img {
+    width: 90%;
+    height: 90%;
+    padding-left: 10px;
+  }
+  header .lien_panier {
+    text-decoration: none;
+    color: #454545;
+    font-family: "Arial", sans-serif;
+    margin: auto 10px auto 5px;
+    text-align: right;
+    font-size: 0.8em;
+  }
+  #pageproduit {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #pageproduit h1 {
+    font-size: 1.2em;
+  }
+  #pageproduit h2 {
+    font-size: 1em;
+    margin-bottom: 10px;
+    width: 80%;
+  }
+  #cameras {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+  }
+  section a {
+    width: 90%;
+    height: 480px;
+    margin: 20px auto 20px auto;
+  }
+  section a img {
+    width: 100%;
+  }
+  section a .cameras_Info {
+    margin: auto;
+  }
+  footer {
+    display: flex;
+    justify-content: space-around;
+    bottom: 0;
+    margin: 0px;
+  }
+  footer h2 {
+    width: 80%;
+  }
+  .camera_Info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+  }
+  .camera_Info img {
+    margin: 20px auto auto auto;
+    width: 80%;
+    height: 80%;
+  }
+  .camera_Info .camera_info {
+    width: 80%;
+  }
+  .camera_Info .camera_cart {
+    padding-bottom: 10px;
+  }
+  .camera_Info .camera_cart .each_camera {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+  }
+  .camera_Info .camera_cart .each_camera p {
+    padding: 10px;
+    margin: auto;
+  }
+  .camera_Info .camera_cart .each_camera .prixcamera {
+    font-weight: 500;
+    margin: auto;
+  }
+  .camera_confirm {
+    width: 90%;
+  }
+  .camera_confirm .confirm {
+    margin: 30px auto 30px auto;
+    width: 90%;
+  }
+  
+}
+
+
+@media only screen and (min-width: 678px) and (min-width: 760px) {
+  header a img {
+    width: 90%;
+    height: 90%;
+    padding-left: 15px;
+  }
+  header .lien_panier {
+    text-decoration: none;
+    color: #454545;
+    font-family: "Arial", sans-serif;
+    margin: auto 15px auto 5px;
+    text-align: right;
+    font-size: 1em;
+  }
+  #pageproduit {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #pageproduit h2 {
+    margin-bottom: 10px;
+    width: 80%;
+  }
+  #cameras {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+
+  section a .cameras_Info {
+    margin: auto;
+  }
+  footer {
+    display: flex;
+    justify-content: space-around;
+    bottom: 0;
+    margin: 0px;
+  }
+  footer h2 {
+    width: 80%;
+  }
+  .camera_Info {
+    display: flex;
+    justify-content: center;
+  }
+  .camera_Info img {
+    margin: 30px auto auto auto;
+    width: 25%;
+    height: 80%;
+  }
+  .camera_Info .camera_info {
+    width: 80%;
+  }
+  .camera_Info .camera_cart {
+    padding-bottom: 10px;
+    width: 80%;
+  }
+  .camera_Info .camera_cart .each_camera {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 20%;
+  }
+  .camera_Info .camera_cart .each_camera p {
+    padding: 10px;
+    margin: auto;
+  }
+  .camera_Info .camera_cart .each_camera .prixcamera {
+    font-weight: 500;
+    margin: auto;
+  }
+  .camera_confirm {
+    width: 90%;
+  }
+  .camera_confirm .confirm {
+    margin: 30px auto 30px auto;
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  footer {
+    display: flex;
+    justify-content: space-around;
+    bottom: 0;
+    margin: 0px;
+  }
+  #cameras {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .camera_Info {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .camera_Info img {
+    margin: auto;
+    width: 40%;
+    height: 70%;
+  }
+  .camera_Info .camera_info {
+    width: 80%;
+  }
+}
+
+@media (orientation: landscape) {
+  footer {
+    margin: auto;
+    height: auto;
+    background-color: #f3e9f1;
+    color: #454545;
+    bottom: 0;
+  }
+}
