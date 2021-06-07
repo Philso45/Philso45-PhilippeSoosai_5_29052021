@@ -7,30 +7,22 @@ let totalPrice = localStorage.getItem('totalPrice');
 console.log(totalPrice);
 
 //création page de confirmation et remerciement
-const cameraconfirm = document.getElementById('page_produit');
+const cameraconfirm = document.getElementById('pageproduit');
 const cameraDiv = document.createElement('div');
 cameraconfirm.appendChild(cameraDiv);
 cameraDiv.className = 'order_confirm';
 
 const cameraH3 = document.createElement('h3');
 cameraDiv.appendChild(cameraH3);
-cameraH3.textContent = "Orinoco vous remercie pour votre commande !";
+cameraH3.textContent = "Nous vous remercions pour votre commande !";
 
 const cameraText = document.createElement('p');
 cameraDiv.appendChild(cameraText);
-cameraText.textContent = "Nous avons le plaisir de vous informer que votre commande a bien été enregistrée.";
+cameraText.textContent = "Votre commande a bien été enregistrée.";
 
 const cameraText2 = document.createElement('p');
 cameraDiv.appendChild(cameraText2);
-cameraText2.innerHTML = "Vos oursons arriverons bientôt chez vous.<br />Vous trouverez ci-dessous le récapitulatif de votre commande."
-
-const cameraText3 = document.createElement('p');
-cameraDiv.appendChild(cameraText3);
-cameraText3.textContent = "Nous espérons vous revoir très vite chez Oribears !"
-
-const cameraText4 = document.createElement('p');
-cameraDiv.appendChild(cameraText4);
-cameraText4.textContent = "Toute l'équipe d'Orinoco";
+cameraText2.innerHTML = "Votre commande sera expédié dans les 48h."
 
 // récapitulatif de votre commande
 const cameraDivConfirm = document.createElement('div');

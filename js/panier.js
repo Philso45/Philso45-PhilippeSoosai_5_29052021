@@ -2,7 +2,7 @@
 let camerastorage = JSON.parse(localStorage.getItem('newArticle'));
 console.log(camerastorage);
 
-// création de la page du récapitulatif panier
+// création de la page panier
 const cameraOne = document.getElementById('page_produit');
 const cameraDiv = document.createElement('div');
 cameraOne.appendChild(cameraDiv);
@@ -12,16 +12,12 @@ const cameraDivCart = document.createElement('div');
 cameraDiv.appendChild(cameraDivCart);
 cameraDivCart.className = 'camera_cart';
 
-const cameraH3 = document.createElement('h3');
-cameraDivCart.appendChild(cameraH3);
-cameraH3.textContent = "Votre choix :";
-
 if(camerastorage == null || camerastorage.length === 0){
     // si le panier est vide 
     const emptyCart = document.createElement('p');
     cameraDivCart.appendChild(emptyCart);
     emptyCart.className = "empty_cart";
-    emptyCart.textContent = "Panier vide !"
+    emptyCart.textContent = "Panier vide ! Ajouter des produits à votre panier. "
 } else {
     // si des éléments sont présents dans le panier : récupération des éléments du panier
     let i = 0;
@@ -30,16 +26,18 @@ if(camerastorage == null || camerastorage.length === 0){
         cameraDivCart.appendChild(eachcamera);
         eachcamera.className = 'each_camera';
         
-
+        //Récupération de la quantité, nom de la caméra et choix de lentilles
         const camerasCart = document.createElement('p');
         eachcamera.appendChild(camerasCart);
         camerasCart.textContent = cameraStorage.quantité + " " + cameraStorage.nom + " , " + cameraStorage.lentilles;
 
+        // Récupératio et affichage du prix dans la div prix_caméra
         const cameraPrice = document.createElement('div');
         eachcamera.appendChild(cameraPrice);
         cameraPrice.className = 'prix_camera';
         cameraPrice.id = i++;
 
+        // Affichage du TTC
         const price = document.createElement('p');
         cameraPrice.appendChild(price);
         price.textContent = cameraStorage.prix + " €" + " TTC"
@@ -49,12 +47,14 @@ if(camerastorage == null || camerastorage.length === 0){
         cameraPrice.appendChild(supprbutton);
         supprbutton.className = 'suppr_button';
 
+        // Ajout du font awesome croix pour supprimer le produit
         const iconButton = document.createElement('i');
         supprbutton.appendChild(iconButton);
         iconButton.className = "fas fa-times";
 
     };
-    // on récupére l'article associé au bouton poubelle
+
+    // on récupére l'article associé au bouton croix
     let supprbutton = document.getElementsByClassName('suppr_button');
     for (let i = 0 ; i < supprbutton.length; i++) {
         supprbutton[i].addEventListener('click' , function (event) { 
@@ -68,7 +68,7 @@ if(camerastorage == null || camerastorage.length === 0){
             localStorage.setItem('newArticle', JSON.stringify(camerastorage));
             JSON.parse(localStorage.getItem('newArticle'));
 
-            alert('Cet article a bien été supprimé !');
+            alert('Produit supprimé !');
             window.location.href = "panier.html";   
         }); 
     };
@@ -78,7 +78,6 @@ if(camerastorage == null || camerastorage.length === 0){
     for (cameraStorage of camerastorage) {
         let article = cameraStorage.prix;
         calculPrice.push(article);
-        console.log(article)
     };
 
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
@@ -88,19 +87,21 @@ if(camerastorage == null || camerastorage.length === 0){
     const total = document.createElement('p');
     cameraDivCart.appendChild(total);
     total.className = 'total';
-    total.textContent = "Montant total = " + totalPrice + " €" + " TTC";
+    total.textContent = "Montant total : " + totalPrice + " €" + " TTC";
 
-    //création d'un bouton pour vider le panier
+    //création d'un bouton pour supprimer les articles du panier
     const suppression = document.createElement('button');
     cameraDivCart.appendChild(suppression);
-    suppression.className = 'icon_suppression';
+    suppression.className = 'button_suppression';
 
+    //Création d'un lien sur le boutton supprimer et son libellé
     const cartLink = document.createElement('a');
     suppression.appendChild(cartLink);
     cartLink.href = "panier.html";
     cartLink.id = "cart_link"
     cartLink.textContent = "Supprimer mes articles";
 
+    // Event supprimer les articles du panier avec redirection vers page panier.html
     suppression.addEventListener("click", function (event) {
         event.preventDefault();
         localStorage.removeItem('newArticle');
@@ -113,9 +114,9 @@ if(camerastorage == null || camerastorage.length === 0){
     form.className = 'contact_form';
     cameraDivCart.appendChild(form);
 
-    const cameraH3Bis = document.createElement('h3');
-    form.appendChild(cameraH3Bis);
-    cameraH3Bis.textContent = "Veuillez compléter le formulaire de commande ";
+    const camerah33 = document.createElement('h3');
+    form.appendChild(camerah33);
+    camerah33.textContent = "Veuillez compléter le formulaire de commande ";
 
     // création fonctions de validité prénom, nom, ville
     function isValid(value) {
@@ -142,6 +143,7 @@ if(camerastorage == null || camerastorage.length === 0){
     labelFirstName.setAttribute('for', 'prénom');
     labelFirstName.textContent = 'Prénom : ';
 
+    //Input type text
     const firstName = document.createElement('input');
     divFirstName.appendChild(firstName);
     firstName.setAttribute('type', 'text');
@@ -167,7 +169,8 @@ if(camerastorage == null || camerastorage.length === 0){
     divLastName.appendChild(labelLastName);
     labelLastName.setAttribute('for', 'nom');
     labelLastName.textContent = 'Nom : ';
-
+    
+    //Input type text
     const lastName = document.createElement('input');
     divLastName.appendChild(lastName);
     lastName.setAttribute('type', 'text');
@@ -194,6 +197,7 @@ if(camerastorage == null || camerastorage.length === 0){
     labelAdress.setAttribute('for', 'adresse');
     labelAdress.textContent = 'Adresse de livraison : ';
 
+    //Textarea 
     const address = document.createElement('textarea');
     Adresse.appendChild(address);
     address.setAttribute('type', 'text');
@@ -219,6 +223,7 @@ if(camerastorage == null || camerastorage.length === 0){
     labelville.setAttribute('for', 'ville');
     labelville.textContent = 'Votre ville : ';
 
+    //Input type text
     const villa = document.createElement('input');
     ville.appendChild(villa);
     villa.setAttribute('type', 'text');
@@ -245,6 +250,7 @@ if(camerastorage == null || camerastorage.length === 0){
     labelEmail.setAttribute('for', 'email');
     labelEmail.textContent = 'Votre adresse mail : ';
 
+    //Input type mail
     const mail = document.createElement('input');
     email.appendChild(mail);
     mail.setAttribute('type', 'email');
@@ -311,7 +317,7 @@ if(camerastorage == null || camerastorage.length === 0){
             // envoie des données au serveur
             const post = async function (data){
                 try {
-                    let response = await fetch('http://localhost:3000/api/cameras/order', {
+                    let response = await fetch('http://localhost:3000/api/cameras', {
                         method: 'POST',
                         body: JSON.stringify(data),
                         headers: {
@@ -321,7 +327,6 @@ if(camerastorage == null || camerastorage.length === 0){
                     if(response.ok) {
                         let data = await response.json();
                         console.log(data.orderId);
-                        console.log(data)
                         localStorage.setItem("responseOrder", data.orderId);
                         window.location = "confirmation.html";
                         localStorage.removeItem("newArticle");

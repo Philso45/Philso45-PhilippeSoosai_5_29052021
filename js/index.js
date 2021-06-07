@@ -8,13 +8,15 @@ const getCameras =  async function() {
 
             for (let camera of cameras) {
                 const camerasDiv = document.getElementById('cameras');
-        
-                //création de la section "camera"
+
+        ///////////////////CREATION DE MON CONTENU POUR CHAQUE SECTION////////////////////
+
+                //création de plusieurs sections avec la class = "camera" pour chaque produit de mon tableau JSON
                 const camerasSection = document.createElement('section');
                 camerasDiv.appendChild(camerasSection);
                 camerasSection.className = 'camera';
         
-                //création lien vers produit.html pour chaque section
+                //création des liens vers ma page produit.html pour chaque sections en récupérant l'iD de chaque référence
                 const lien_produit = document.createElement("a");
                 lien_produit.href = "produit.html?id=" + camera._id;
                 camerasSection.appendChild(lien_produit);
@@ -26,27 +28,27 @@ const getCameras =  async function() {
                 cameraImg.setAttribute('alt', 'camera vintage ');
                 
         
-                //création de la div camerasInfo
+                //création de la div camerasInfo qui vas regrouper les informations concernant mon produit 
                 const camerasInfo = document.createElement('div');
                 lien_produit.appendChild(camerasInfo);
                 camerasInfo.className = 'cameras_Info';
         
-                //création h3 pour le titre
+                //création h3 pour le titre de mon produit
                 const h3camerasInfo = document.createElement('h3');
                 camerasInfo.appendChild(h3camerasInfo);
                 h3camerasInfo.textContent = camera.name;
         
-                //création p pour le prix
+                //création d'un "p" pour afficher le prix diviser par 100 pour arriver sur un prix normal
                 const pcamerasInfo = document.createElement('p');
                 camerasInfo.appendChild(pcamerasInfo);
                 pcamerasInfo.textContent = camera.price / 100 + " €";
 
-                //création p pour la descrpition
+                //création d'un p pour la descrpition de chaque réference
                 const dcamerasInfo = document.createElement("p")
                 camerasInfo.appendChild(dcamerasInfo)
                 dcamerasInfo.textContent = camera.description;
                 
-                //création bouton en savoir plus
+                //création du bouton en savoir plus qui mène directement vers produit.html
                 const buttoncamerasInfo = document.createElement('button');
                 const tcamerasInfo = document.createTextNode("En savoir plus");
                 buttoncamerasInfo.appendChild(tcamerasInfo);

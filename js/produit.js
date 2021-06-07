@@ -3,28 +3,28 @@ const recupID = window.location.search;
 const url = new URLSearchParams(recupID);
 const id = url.get('id');
 console.log(id);
-
+////////////// RECUPERATION DES DONNEES DE LA CAMERA PAR SON ID ////////////
 const getCameras = async function() {
-     // récupération des données de la camera sélectionnée par son id
+
     try {
         let response = await fetch('http://localhost:3000/api/cameras/' + id);
         if (response.ok) {
             let camera = await response.json();
             console.log(camera);
 
-            // création de la div de la caméra séléctionné
+            // création de la div avec la class "camera_info" de la caméra séléctionné
             const cameraMain = document.getElementById('pageproduit');
             const cameraDiv = document.createElement('div');
             cameraMain.appendChild(cameraDiv);
             cameraDiv.className = 'camera_Info';
 
-            //ajout de l'image à la div de la caméra séléctionné
+            //ajout de l'image de la caméra séléctionné à la div créeé au dessus
             const cameraImg = document.createElement('img');
             cameraDiv.appendChild(cameraImg);
             cameraImg.setAttribute('src', camera.imageUrl);
-            cameraImg.setAttribute('alt', 'Camera vintage ');
+            cameraImg.setAttribute('alt', 'Camera ' + camera.name );
 
-            //création div de fiche produit
+            //création d'une div regroupant les informations du produit 
             const cameraDivInfo = document.createElement('div');
             cameraDiv.appendChild(cameraDivInfo);
             cameraDivInfo.className = 'camera_info';
@@ -34,37 +34,37 @@ const getCameras = async function() {
             cameraDivInfo.appendChild(cameraH3);
             cameraH3.textContent = camera.name;
 
-            // ajout de la description
+            // ajout de la description dans une balise "p"
             const cameradescription = document.createElement('p');
             cameraDivInfo.appendChild(cameradescription);
             cameradescription.textContent = camera.description;
 
-            // ajout du prix
+            // ajout du prix TTC 
             const cameraPrice = document.createElement('p');
             cameraDivInfo.appendChild(cameraPrice);
             cameraPrice.textContent = "Prix : " + camera.price / 100 + " €" + " TTC";
             cameraPrice.className = 'prixcamera';
 
-            // création choix de lentilles dans une balise form
+            // création choix de lentilles dans une balise form ainsi qu'une div 
             const choixlentilles = document.createElement('form');
             cameraDivInfo.appendChild(choixlentilles);
             const choixlentillesDiv = document.createElement('div');
             choixlentilles.appendChild(choixlentillesDiv);
             choixlentillesDiv.className = 'lentilles';
 
-            // création du label à coté du form
+            // création du label à coté du form choix de lentille
             const choix = document.createElement('label');
             choixlentillesDiv.appendChild(choix);
-            choix.textContent = "Personnalisez votre lentille : ";
+            choix.textContent = "Choisissez votre lentille : ";
             
+            // création du balise Selection regroupant mes options de lentilles
             const select = document.createElement('select');
             choixlentillesDiv.appendChild(select);
-            /*select.setAttribute('name', "Choix de lentiles de " + camera.name);
-            select.setAttribute('id', "select_1 "); A RETIRER SI PAS BESOIN */
 
             // ajout de la liste des lentilles disponible
             const lentilles = camera.lenses;
 
+            //parcours le tableau pour trouver les options de lentilles disponible
             for (i = 0; i < lentilles.length; i++) {
                 const lentilleSelect = document.createElement('option');
                 select.appendChild(lentilleSelect);
@@ -83,7 +83,7 @@ const getCameras = async function() {
             ajoutpanier.addEventListener("click", function (event) {
                 event.preventDefault();//l'action par défaut n'est pas pris en compte si il n'y a pas de clique.
 
-            // stockage des données du/des camera souhaité dans localStorage
+            // stockage des données des camera souhaité dans localStorage
                 let cameraselect = {
                     nom: camera.name,
                     Id: camera._id,
@@ -104,7 +104,7 @@ const getCameras = async function() {
                     } else {
                         window.location.href = "index.html";
                     }
-                } else {
+                }else {
                     cameralocalstorage = [];
                     cameralocalstorage.push(cameraselect);
                     localStorage.setItem('newArticle', JSON.stringify(cameralocalstorage));

@@ -306,7 +306,7 @@ section a .cameras_Info p {
   color: #ac1d04;
 }
 
-.camera_Info .camera_cart .icon_suppression {
+.camera_Info .camera_cart .button_suppression {
   width: auto;
   border-radius: 20px;
   margin: 20px auto 30px auto;
@@ -318,12 +318,12 @@ section a .cameras_Info p {
   cursor: pointer;
 }
 
-.camera_Info .camera_cart .icon_suppression #cart_link {
+.camera_Info .camera_cart .button_suppression #cart_link {
   text-decoration: none;
   color: #ffffff;
 }
 
-.camera_Info .camera_cart .icon_suppression .fas {
+.camera_Info .camera_cart .button_suppression .fas {
   font-size: 1.5em;
   padding: 5px;
 }
@@ -588,6 +588,12 @@ form {
   #pageproduit h2 {
     margin-bottom: 10px;
     width: 80%;
+  }
+  #pageproduit h3 {
+    text-align: center;
+  }
+  #pageproduit .order_confirm {
+    text-align: center;
   }
   #cameras {
     display: flex;
