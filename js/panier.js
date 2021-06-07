@@ -109,7 +109,7 @@ if(camerastorage == null || camerastorage.length === 0){
         window.location.href = "panier.html";
     });
 
-    //création du formulaire de commande
+    ////////////////////////////////////////////création du formulaire de commande
     const form = document.createElement('form');
     form.className = 'contact_form';
     cameraDivCart.appendChild(form);
@@ -224,16 +224,16 @@ if(camerastorage == null || camerastorage.length === 0){
     labelville.textContent = 'Votre ville : ';
 
     //Input type text
-    const villa = document.createElement('input');
-    ville.appendChild(villa);
-    villa.setAttribute('type', 'text');
-    villa.setAttribute('class', 'name');
-    villa.name = "Ville"
-    villa.required = true;
+    const city = document.createElement('input');
+    ville.appendChild(city);
+    city.setAttribute('type', 'text');
+    city.setAttribute('class', 'name');
+    city.name = "Ville"
+    city.required = true;
 
     // Vérification de la validité de la ville
-    villa.addEventListener("change", function (event) {
-        if (isValid(villa.value)) {
+    city.addEventListener("change", function (event) {
+        if (isValid(city.value)) {
         } else {
             alert("Caractère spécial non autorisé")
             event.preventDefault()
@@ -281,7 +281,7 @@ if(camerastorage == null || camerastorage.length === 0){
 
     // envoie des données panier + contact au serveur si le formulaire est valide
     soumettre.addEventListener("click", function (event) {
-        if(isValid(firstName.value) && isValid(lastName.value) && validAddress(address.value) && isValid(villa.value) && validMail(mail.value)){
+        if(isValid(firstName.value) && isValid(lastName.value) && validAddress(address.value) && isValid(city.value) && validMail(mail.value)){
             event.preventDefault();
 
             // envoie du prix total au localStorage
@@ -294,7 +294,7 @@ if(camerastorage == null || camerastorage.length === 0){
                 firstName: firstName.value,
                 lastName: lastName.value,
                 address: address.value,
-                villa: villa.value,
+                city: city.value,
                 email: mail.value,
             }
             console.log(contact);
@@ -317,7 +317,7 @@ if(camerastorage == null || camerastorage.length === 0){
             // envoie des données au serveur
             const post = async function (data){
                 try {
-                    let response = await fetch('http://localhost:3000/api/cameras', {
+                    let response = await fetch('http://localhost:3000/api/cameras/order', {
                         method: 'POST',
                         body: JSON.stringify(data),
                         headers: {
