@@ -584,6 +584,7 @@ form {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin: 50px;
   }
   #pageproduit h2 {
     margin-bottom: 10px;
@@ -594,6 +595,7 @@ form {
   }
   #pageproduit .order_confirm {
     text-align: center;
+    margin-top: 50px;
   }
   #cameras {
     display: flex;

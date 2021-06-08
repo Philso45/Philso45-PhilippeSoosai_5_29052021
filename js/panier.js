@@ -98,7 +98,7 @@ if(camerastorage == null || camerastorage.length === 0){
     const cartLink = document.createElement('a');
     suppression.appendChild(cartLink);
     cartLink.href = "panier.html";
-    cartLink.id = "cart_link"
+    cartLink.id = "cart_link";
     cartLink.textContent = "Supprimer mes articles";
 
     // Event supprimer les articles du panier avec redirection vers page panier.html
@@ -109,7 +109,7 @@ if(camerastorage == null || camerastorage.length === 0){
         window.location.href = "panier.html";
     });
 
-    ////////////////////////////////////////////création du formulaire de commande
+    ////////////////////////////////////////////création du formulaire de commande/////////////////////////////////////////////
     const form = document.createElement('form');
     form.className = 'contact_form';
     cameraDivCart.appendChild(form);
@@ -209,7 +209,8 @@ if(camerastorage == null || camerastorage.length === 0){
     address.addEventListener("change", function (event) {
         if (validAddress(address.value)){
         } else {
-            
+            alert("Caractère spécial non autorisé")
+            event.preventDefault()
         }
     });
 
@@ -302,8 +303,9 @@ if(camerastorage == null || camerastorage.length === 0){
             // création du tableau products (id des caméras)
             let products = [];
             for (cameraStorage of camerastorage) {
-                let productsId = cameraStorage.cameraId;
+                let productsId = cameraStorage.Id;
                 products.push((productsId));
+                console.log(cameraStorage)
             }
             console.log(products);
 
@@ -317,7 +319,7 @@ if(camerastorage == null || camerastorage.length === 0){
             // envoie des données au serveur
             const post = async function (data){
                 try {
-                    let response = await fetch('http://localhost:3000/api/cameras/order', {
+                    let response = await fetch("http://localhost:3000/api/cameras/order" , {
                         method: 'POST',
                         body: JSON.stringify(data),
                         headers: {
