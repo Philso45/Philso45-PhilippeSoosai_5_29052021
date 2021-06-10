@@ -3,7 +3,8 @@ const recupID = window.location.search;
 const url = new URLSearchParams(recupID);
 const id = url.get('id');
 console.log(id);
-////////////// RECUPERATION DES DONNEES DE LA CAMERA PAR SON ID ////////////
+
+////////////// RECUPERATION DES DONNEES DE LA CAMERA PAR SON ID ///////////////////////////
 const getCameras = async function() {
 
     try {
@@ -57,7 +58,7 @@ const getCameras = async function() {
             choixlentillesDiv.appendChild(choix);
             choix.textContent = "Choisissez votre lentille : ";
             
-            // création du balise Selection regroupant mes options de lentilles
+            // création de la balise Select regroupant mes options de lentilles
             const select = document.createElement('select');
             choixlentillesDiv.appendChild(select);
 

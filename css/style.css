@@ -37,10 +37,6 @@ header .lien_panier {
   text-align: right;
 }
 
-header .lien_panier:hover {
-  opacity: 1;
-  transform: scale(1);
-}
 input {
     margin: .4rem 0;
     padding: 10px;
@@ -50,6 +46,7 @@ input {
     border-color:#f3e9f1; 
     box-shadow: 0px 4px 5px #bfbfbf;
 }
+
 #pageproduit h1 {
     font-family: "Arial", sans-serif;
     font-size: 2em;
@@ -366,6 +363,7 @@ form {
   font-size: 1.5em;
   text-align: center;
   font-style: italic;
+  margin-bottom: 42px;
 }
 
 .total {

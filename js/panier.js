@@ -1,4 +1,4 @@
-//récupération données localStorage
+//récupération des données du localStorage
 let camerastorage = JSON.parse(localStorage.getItem('newArticle'));
 console.log(camerastorage);
 
@@ -31,7 +31,7 @@ if(camerastorage == null || camerastorage.length === 0){
         eachcamera.appendChild(camerasCart);
         camerasCart.textContent = cameraStorage.quantité + " " + cameraStorage.nom + " , " + cameraStorage.lentilles;
 
-        // Récupératio et affichage du prix dans la div prix_caméra
+        // Récupération  et affichage du prix dans la div prix_caméra
         const cameraPrice = document.createElement('div');
         eachcamera.appendChild(cameraPrice);
         cameraPrice.className = 'prix_camera';
@@ -118,7 +118,7 @@ if(camerastorage == null || camerastorage.length === 0){
     form.appendChild(camerah33);
     camerah33.textContent = "Veuillez compléter le formulaire de commande ";
 
-    // création fonctions de validité prénom, nom, ville
+    // création fonctions de validité prénom, nom, ville REGEX
     function isValid(value) {
         return /^[A-Z-a-z\s]{3,40}$/.test(value);
     };
@@ -143,7 +143,7 @@ if(camerastorage == null || camerastorage.length === 0){
     labelFirstName.setAttribute('for', 'prénom');
     labelFirstName.textContent = 'Prénom : ';
 
-    //Input type text
+    //Type de l'input et la fonction required
     const firstName = document.createElement('input');
     divFirstName.appendChild(firstName);
     firstName.setAttribute('type', 'text');
@@ -170,7 +170,7 @@ if(camerastorage == null || camerastorage.length === 0){
     labelLastName.setAttribute('for', 'nom');
     labelLastName.textContent = 'Nom : ';
     
-    //Input type text
+    //Type de l'input et la fonction requir
     const lastName = document.createElement('input');
     divLastName.appendChild(lastName);
     lastName.setAttribute('type', 'text');
@@ -280,7 +280,7 @@ if(camerastorage == null || camerastorage.length === 0){
     soumettre.id = 'valid';
     soumettre.textContent = "Commander";
 
-    // envoie des données panier + contact au serveur si le formulaire est valide
+    // envoie des données panier + appel au serveur si le formulaire est valide
     soumettre.addEventListener("click", function (event) {
         if(isValid(firstName.value) && isValid(lastName.value) && validAddress(address.value) && isValid(city.value) && validMail(mail.value)){
             event.preventDefault();
@@ -321,7 +321,7 @@ if(camerastorage == null || camerastorage.length === 0){
                 try {
                     let response = await fetch("http://localhost:3000/api/cameras/order" , {
                         method: 'POST',
-                        body: JSON.stringify(data),
+                        body: JSON.stringify(data), //Transformation objet JS en JSON
                         headers: {
                             'Content-Type': 'application/json'
                         }

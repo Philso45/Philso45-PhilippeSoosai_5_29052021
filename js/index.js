@@ -1,17 +1,18 @@
 const getCameras =  async function() {
     //récupération des données de l'API 
     try {
-        let response = await fetch('http://localhost:3000/api/cameras/');
+        let response = await fetch('http://localhost:3000/api/cameras/'); // URL de l'API
         if (response.ok) {
             let cameras = await response.json();
             console.log(cameras);
 
+            // Récupération de ma div avec l'Id Camera dans mon DOM
             for (let camera of cameras) {
                 const camerasDiv = document.getElementById('cameras');
 
         ///////////////////CREATION DE MON CONTENU POUR CHAQUE SECTION////////////////////
 
-                //création de plusieurs sections avec la class = "camera" pour chaque produit de mon tableau JSON
+                //création de plusieurs sections avec la class = "camera" pour chaque produit de mon tableau de l'API
                 const camerasSection = document.createElement('section');
                 camerasDiv.appendChild(camerasSection);
                 camerasSection.className = 'camera';
@@ -21,7 +22,7 @@ const getCameras =  async function() {
                 lien_produit.href = "produit.html?id=" + camera._id;
                 camerasSection.appendChild(lien_produit);
         
-                //ajout image camera + src, alt
+                //ajout de l'image camera + src + alt
                 const cameraImg = document.createElement('img');
                 lien_produit.appendChild(cameraImg);
                 cameraImg.setAttribute('src', camera.imageUrl);
@@ -43,7 +44,7 @@ const getCameras =  async function() {
                 camerasInfo.appendChild(pcamerasInfo);
                 pcamerasInfo.textContent = camera.price / 100 + " €";
 
-                //création d'un p pour la descrpition de chaque réference
+                //création d'un "p" pour la descrpition de chaque réference
                 const dcamerasInfo = document.createElement("p")
                 camerasInfo.appendChild(dcamerasInfo)
                 dcamerasInfo.textContent = camera.description;
